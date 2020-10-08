@@ -13,10 +13,11 @@ class App extends Component {
   
 //Helper function to fetch data from API
 loadData = async () => {
-  const response = await fetch('https://api.chucknorris.io/jokes/random');
+  const response = await fetch('https://api.chucknorris.io/jokes/random?category=dev');
   const data = await response.json();
   return data;
 };
+
  handleClick = async () => {
   const userData = await this.loadData();
   this.setState({
@@ -27,9 +28,10 @@ loadData = async () => {
   async componentDidMount(){
     console.log("The component mounted");
     const userData = await this.loadData();
- 
+    
     this.setState({
-      userData: userData
+      userData: userData,
+  
     });
 
   }
@@ -37,15 +39,15 @@ loadData = async () => {
 
 
   render(){
-  
-    const {userData} = this.state;
+    const {userData, cats} = this.state;
     return (
       <div className="App">
         <header className="App-header">
          <h1>Chuck Says</h1>
         </header>
+        
         <button onClick={this.handleClick}>Load New</button>
-       <ChuckSays userData={userData}/>
+       <ChuckSays userData={userData} />
       </div>
       //^ passing data from parent to child as a prop
     );

@@ -4,7 +4,7 @@ import "./chuckSays.css";
 //refactored as a function
 function ChuckSays(props) {
     //passing data to the component via props
-    const { userData } = props;
+    const { userData, categories } = props;
     
     //accessing the props
     return (
