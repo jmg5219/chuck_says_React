@@ -27,8 +27,7 @@ loadData = async () => {
   async componentDidMount(){
     console.log("The component mounted");
     const userData = await this.loadData();
-    
-    
+ 
     this.setState({
       userData: userData
     });
@@ -45,7 +44,7 @@ loadData = async () => {
         <header className="App-header">
          <h1>Chuck Says</h1>
         </header>
-        <button onClick={this.handleClick}>Load New Quote</button>
+        <button onClick={this.handleClick}>Load New</button>
        <ChuckSays userData={userData}/>
       </div>
       //^ passing data from parent to child as a prop

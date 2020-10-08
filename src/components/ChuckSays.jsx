@@ -5,10 +5,13 @@ import "./chuckSays.css";
 function ChuckSays(props) {
     //passing data to the component via props
     const { userData } = props;
-    console.log(userData.value)
+    
     //accessing the props
     return (
-        <p>{userData.value}</p>
+        <div className = "container">
+            <p>{userData.value}</p>
+        </div>
+        
         
 
 
