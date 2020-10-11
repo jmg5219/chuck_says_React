@@ -1,8 +1,7 @@
 import React from "react";
+import { Box, Dropdown, DropdownTrigger, Icon, DropdownMenu, DropdownContent, DropdownItem, DropdownDivider, Container, Hero, HeroBody, Title, Button } from 'bloomer';
+import 'bulma/css/bulma.css'
 import "./chuckSays.css";
-
-
-
 
 
 
@@ -15,12 +14,20 @@ function ChuckSays(props) {
     //accessing the props
     return (
         <div className="container">
-
-            <p>{userData.value}</p>
+            <Hero>
+                <HeroBody className="hero">
+                    <Container hasTextAlign='centered'>
+                        <Title className="hero-title"></Title>
+                    </Container>
+                </HeroBody>
+            </Hero>
+            <Box className="content-box">{userData.value}</Box>
             {/* Creating a dropdown list and assigning value */}
-            <select id="selectBox">
-            {categories.map((category,index) => <option  key={index} value={category}>{category}</option>)}
+
+            <select className="select-box" id="selectBox">
+                {categories.map((category, index) => <option key={index} value={category}>{category}</option>)}
             </select>
+
 
         </div>
 
